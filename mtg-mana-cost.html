@@ -1,0 +1,35 @@
+<link rel="stylesheet" type="text/css" href="./css/mtg-mana-cost.css">
+<link rel="import" href="../polymer/polymer.html">
+
+<script>
+	class ManaCost extends Polymer.Element {
+		static get properties() {
+			return {
+				cost: {
+					type: String,
+					observer: '_changed'
+				},
+				size: {
+					type: String,
+					value: 'small',
+					observer: '_changed'
+				}
+			}
+		}
+
+		_changed() {
+			let html = '';
+
+			if (this.cost) {
+				this.cost.match(/\{(.*?)\}/g).forEach(cost => {
+					let m = cost.replace(/(\/|\{|\})/g, '').toLowerCase();
+					html += `<span class="mana ${this.size} s${m}"></span>`;
+				});
+			}
+
+			this.innerHTML = html;
+		}
+	}
+
+	customElements.define('mtg-mana-cost', ManaCost);
+</script>

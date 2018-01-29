@@ -1,0 +1,19 @@
+{
+  "name": "mtg-mana-cost",
+  "version": "1.0.0",
+  "homepage": "https://github.com/StreamsGood/mtg-mana-cost",
+  "authors": [
+    "Brendan Hagan (haganbmj)"
+  ],
+  "description": "Web Component for displaying MTG mana costs.",
+  "main": "mtg-mana-cost.html",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "dependencies": {
+    "polymer": "^2.4.0"
+  }
+}
